@@ -86,7 +86,7 @@ String operations:
 Concatenation: ||
 Upper, lower, ...
 
-Q: where are these results coming from?
+Q: where are these results coming from -> what is the point of have a username?
 Data, Time Timestamp
 data+time = timestamp
 timestamp+timestamp = timestamp
@@ -101,3 +101,144 @@ a value is not known
 it is not known whether a value exists or not
 
 ===============
+
+This is how it looks:
+SELECT attributes, operation over attr, constants
+FROM R
+WHERE <conditions for each tuple>
+
+But it actually does it in order, essentially
+FROM R 
+WHERE
+SELECT
+
+ex: select id, name from students where year > 2018;
+
+ex: select * from students where name like '%A%';
+	-- get names where there is an A somewhere. 
+
+ex: select * from student where name like '%';
+	-- gets all names.
+
+ex: select * from requires where enforcedsince is null;
+	-- SQL can actually look for NULL.
+
+ex: select * from requires where enforcedsince = null;
+	-- returns for nothing. it looks for a value
+
+========================
+
+A=5		TRUE	FALSE	UNKNOWN
+		5 = 5	6 = 5	NULL = 5
+
+UNKNOWN AND TRUE = UNKNOWN
+UNKNOWN AND FALSE = FALSE
+UNKNOWN OR TRUE = TRUE
+UNKNOWN OR FALSE = UNKNOWN
+(like in LITEC)
+
+NOT UNKNOWN = UNKNOWN
+
+(WHERE returns only true values)
+
+so.....
+ex: select * from requires where extract(year from enforcedsince) = 2011 or enforcedsince is null
+	-- combines both results from before
+
+=========================
+
+SELECT A1,A2,A3 from R WHERE C
+is essentially
+\Pi _{A1, A2, A3} (\sigma_{C} R)
+
+But this is a bag projection, so it has duplicates. To solve this:
+SELECT DISTINCT A1, A2, A3 FROM R WHERE C
+
+=========================
+
+SELECT attributes
+FROM R1, R2
+WHERE conditions
+^^^this ends up as a cartesian product
+ex: select * from students, transcript
+
+Let's fix it...
+ex: select * from students, transcript where id = students_id;
+
+And we will give them aliases
+ex: select * from students s, transcript t where s.id = t.student_id;
+
+And even more
+ex: select * from students s, transcript t, majors m where 
+
+===========================================
+
+ex: Find all students who took a course from Prof.Fogg in a Spring semester, retrun their id, name
+
+SELECT DISTINCT
+	s.id
+	, s.name
+FROM
+	students s 		-- name of student
+	, transcript t 	-- who is taking courses
+	, classes c 	-- who is teaching courses
+	, faculty f 	-- name of faculty
+WHERE
+	s.id = t.student_id
+	and t.course_id = c.course_id
+	and t.semester = c.semester
+	and t.year = c.year
+	and t.section = c.section
+	and c.instructor_id = f.id
+	and f.name like '%Fogg%'
+	and t.semester = 'Spring'
+
+Consider it in this order: FROM -> WHERE -> SELECT
+
+Now, a student might return twice. They could have taken two courses from Prof. Fogg in the Spring,
+	so we add the distinct
+
+==========================================
+
+ex: Name of all cross listed courses
+
+SELECT 
+	c.crsname
+FROM
+	courses c
+	, cross_listing cl
+WHERE
+	c.crscode = cl.crscode
+
+==========================================
+
+ex: Name of all students who got an A in any course
+
+SELECT DISTINCT
+	s.id
+	, s.name
+FROM
+	students s
+	, transcript t
+WHERE
+	s.id = t.student_id
+	and t.grade = 'A'
+
+===========================================
+
+SQL 
+ex: set operations
+(SELECT ... FROM ... WHERE)
+	UNION/INTERSECT/EXCEPT <-- Set operation
+(SELECT ... FROM ... WHERE)
+
+ex: bag operations
+(SELECT ... FROM ... WHERE)
+	UNION ALL/INTERSECT ALL/EXCEPT ALL <-- Bag operation
+(SELECT ... FROM ... WHERE)
+
+set ex: (select * from t1) intersect (select * from t2);
+set ex: (select * from t1) except (select * from t2)
+
+bag ex: (select * from t1) intersect all (select * from t2);
+bag ex: (select * from t1) except all (select * from t2)
