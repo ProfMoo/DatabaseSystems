@@ -1,0 +1,103 @@
+SQL SQL SQL
+
+SQL = structured query language
+
+=================================================
+
+DML -> data manipulation language
+	-> SELECT
+
+DDL -> data definition language
+
+BAG semantics 				vs. 	SET semantics
+			   				|
+	{1,1,2,3} != {1,2,3}	|	{1,1,2,3} = {1,2,3}
+			    			|
+Bag Semantics + Dup Removal == Set Operation
+			    			|
+
+-- SQL is BAG semantics, so not all the relational algebra we learned will apply.
+
+================================================================
+
+UNION:
+
+Bag: R U_b S = {m copies of t | k copies of t in R, l copies of t in S, m = k+l}
+
+Set: R U S = {t | t isin R or t isin S}
+
+OR:
+
+Bag: R ^_b S = {m copies of t | k copies of t in R, l copies of t in S, m = min(k, l)}
+
+Set: R ^ S = {t | t isin R and t isin S}
+
+DIFFERENT:
+
+Bag: R -_b S - {m copies of t | k copies of t in R, l copies of t in S, m = max(0, k-l)}
+-- we do max with 0 because we cant go to negative
+
+Set: R-S = {t | t isin R, t isnotin S}
+
+This means that all operations we learned for sets need to be changed a little.
+
+==============================================================
+
+Definitions:
+
+table -> relation
+-- CREATE TABLE tablename(attr1name datatype1, attr2name datatype2, ...)
+-- PRIMARY KEY (attr1, attr2) (don't always have to have in SQL) 
+-- UNIQUE (attr1, attr2, ...)
+-- FOREIGN KEY attr1 REFERENE tablename2(attr1)
+	-- foreign key means that an attribute has to reference another table's part. 
+
+ex: (caps means key)
+advises(student_id, major_id, faculty_id, sincewhen)
+
+=============================================================
+
+SQL: bag semantics, duplicates are not removed
+Tables can have duplicate tuples unless we have primary keys
+
+Select
+SELECT ___attr1, attr2___ FROM relation; (a projection from relational algebra)
+
+FROM relation --> selection ATTR
+
+ex: select name from students;
+	-- give you the names
+ex: selection * from students;
+	-- gives you everything
+ex: select name || ' - ' || email from students;
+	-- gives you a formatted version
+ex: select upper(name) from students;
+	-- gives you names all uppercase
+
+String data types:
+char(x)
+varchar(x)
+text
+
+String delimited by: ' '
+(to say ', use '')
+
+String operations: 
+Concatenation: ||
+Upper, lower, ...
+
+Q: where are these results coming from?
+Data, Time Timestamp
+data+time = timestamp
+timestamp+timestamp = timestamp
+date+interval = date
+data-date = day interval
+
+===============
+
+NULL value is a special value
+a value does not exist
+a value is not known
+it is not known whether a value exists or not
+
+===============
