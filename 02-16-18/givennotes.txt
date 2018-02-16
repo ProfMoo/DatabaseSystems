@@ -1,0 +1,401 @@
+
+These queries cover everything we did in class February 13, plus
+GROUP BY/ HAVING/ ORDER BY
+
+Please watch this video here to get caught up.
+
+
+https://www.youtube.com/watch?v=Mo0VPtbPoPE
+
+
+Database schema is summarized below, primary key is often the first
+attributes unless otherwise noted.
+
+You can find the data here:
+
+http://www.cs.rpi.edu/~sibel/csci4380/spring2018/course_notes/sql_basics.html
+
+DEPARTMENTS(id, name, office, phone)
+
+MAJORS (abrv, name, dept_id)
+    dept_id references departments.id
+
+STUDENTS(id, name, email, address, year, gpa, major)
+    major references majors.abrv
+
+FACULTY(id, name, email, office, dept_id)
+    dept_id references departments.id
+
+COURSES(id, major, crscode, crsname, whenoffered, iscatalog)
+    major references majors.abrv
+
+CROSS_LISTINGS(cross_id, major, crscode, main_id)
+    major references majors.abrv
+    crscode references courses.crscode
+    main_id references courses.id
+    (i.e. crscode is cross listed with the course for main_id)
+
+REQUIRES(course_id, prereq_id, isenforcedsince)
+    note: primary key is (course_id, prereq_id)
+    course_id references courses.id
+    prereq_id references courses.id
+    (i.e. course_id requires course prereq_id to be taken first)
+    
+CLASSROOMS(id, building, room, numseats, notes)
+
+CLASSES(course_id, semester, year, section, classroom_id, instructor_id)
+    note: primary key is (course_id, semester, year, section)
+    course_id references courses.id
+    classroom_id references classrooms.id
+    instructor_id references faculty.id
+
+MEETING_TIME(id, course_id, semester, year, section, meetingtime, days, listingorder)
+    note: (course_id, semester, year, section) references
+                    classes(course_id, semester, year, section)
+    days is like 'M R', 'T F' where 'R' is for thursday
+
+TRANSCRIPT(student_id, course_id, semester, year, section, grade, gradechanged)
+    note: primary key: (student_id, course_id, semester, year, section)
+    student_id references students_id
+    (course_id, semester, year, section) references
+                    classes(course_id, semester, year, section)
+
+
+Write the following queries using the simplest possible SQL
+(i.e. DISTINCT only if necessary, fewest possible relations in the
+FROM clause, no advanced features).
+
+You can find all functions documented here. These will be needed
+extensively for the SELECT queries in PART 1 below:
+
+https://www.postgresql.org/docs/10/static/functions.html
+
+Some notes:
+
+1. Read up on string functions
+
+2. Postgresql is strongly typed, no implicit conversions. But, you can
+cast between types using:
+
+cast(value as type)
+For example:   cast(id as varchar) to make a numerical value a string
+
+3. Dates can be formatted using to_char. The format will tell you
+how it will be displayed: to_char(value, format string)
+
+4. You can extract a part of a data type by extract(field from value)
+
+5. You can always get the timestamp for today with now():
+
+select now() ;
+              now              
+-------------------------------
+ 2018-02-15 08:19:50.323399-05
+(1 row)
+
+
+--------------------
+
+
+PART 1: SELECT queries: In this part, we are exploring the power of
+expressions in SQL. Single relation in FROM, no WHERE clause, but some
+interesting work in SELECT.
+
+
+
+1. Return the id and first name of all students
+
+ firstname 
+-----------
+ Quentin
+ William
+ Janet
+ Alice
+ Eliot
+ Kady
+(6 rows)
+
+2. Return the course id, semester, year, section of all classes in a
+formatted string as shown below.
+
+
+    course_info    
+-------------------
+ 1:(Spring-2014-1)
+ 1:(Spring-2015-1)
+ 1:(Spring-2016-1)
+ 2:(Fall-2014-1)
+ 2:(Fall-2015-1)
+ 3:(Spring-2015-1)
+ 4:(Spring-2015-1)
+ 5:(Fall-2015-1)
+ 5:(Fall-2015-2)
+ 6:(Spring-2015-1)
+ 6:(Spring-2016-1)
+ 6:(Spring-2016-2)
+(12 rows)
+
+3. For each course, return the meeting time formatted using AM/PM
+formattings.
+
+
+ course_id | semester | year | section | meeting_time 
+-----------+----------+------+---------+--------------
+         1 | Spring   | 2014 |       1 | 02:00 P.M.
+         1 | Spring   | 2014 |       1 | 10:00 A.M.
+         1 | Spring   | 2015 |       1 | 02:00 P.M.
+         1 | Spring   | 2015 |       1 | 10:00 A.M.
+         1 | Spring   | 2016 |       1 | 04:00 P.M.
+         1 | Spring   | 2016 |       1 | 06:00 P.M.
+         2 | Fall     | 2014 |       1 | 10:00 A.M.
+         2 | Fall     | 2015 |       1 | 12:00 P.M.
+         3 | Spring   | 2015 |       1 | 12:00 P.M.
+         3 | Spring   | 2015 |       1 | 03:00 P.M.
+         4 | Spring   | 2015 |       1 | 02:00 P.M.
+         5 | Fall     | 2015 |       1 | 10:00 A.M.
+         5 | Fall     | 2015 |       2 | 08:00 P.M.
+(13 rows)
+
+4. For each requirement, return the number of months (approximately)
+it has been enforced as shown (a month is assumed to be 30 days)
+
+
+ course_id | prereq_id | months 
+-----------+-----------+--------
+         5 |         1 |     86
+         4 |         1 |     30
+         6 |         4 |       
+         6 |         5 |       
+(4 rows)
+
+
+PART 2: WHERE CLAUSE: Here we will build on the expressions from above
+but add some conditions to return only some subset of the
+tuples. Remember, each query uses data only from one relation.
+
+
+5. Return id, name, address of all students in year 2020 and major PHYS.
+
+
+ id  |       name       | address 
+-----+------------------+---------
+ 431 | Kady Orloff-Diaz | 
+(1 row)
+
+6. Return the name and year of all alumni.
+
+
+       name       | year 
+------------------+------
+ Kady Orloff-Diaz | 2020
+(1 row)
+
+7. Return name of all students whose last name starts with 'A' (you
+can assume no middle name).
+
+      name       
+-----------------
+ William Adiyodi
+(1 row)
+
+8. Return the info related to courses meeting only on days 'M', 'W' or
+'F' (no other day, i.e. no 'R' or 'T'). Assume that meeting days can
+appear in any order.
+
+
+ course_id | semester | year | section | days 
+-----------+----------+------+---------+------
+         1 | Spring   | 2014 |       1 | W   
+         1 | Spring   | 2015 |       1 | W   
+         1 | Spring   | 2016 |       1 | W   
+         2 | Fall     | 2015 |       1 | W   
+         4 | Spring   | 2015 |       1 | WF  
+(5 rows)
+
+9. Return the courses that are still ongoing (i.e. that have
+a student with no grade).
+
+
+ course_id | semester | year | section 
+-----------+----------+------+---------
+         6 | Spring   | 2016 |       1
+         1 | Spring   | 2016 |       1
+(2 rows)
+
+
+10. Return the course info for courses meeting at two different times
+(yes no join is needed, take a look the schema and think)
+
+
+ course_id | semester | year | section 
+-----------+----------+------+---------
+         1 | Spring   | 2016 |       1
+         1 | Spring   | 2015 |       1
+         1 | Spring   | 2014 |       1
+(3 rows)
+
+
+PART 3: FROM Clause: We will experiment here with simple queries that
+involve multiple relations. Do not forget to write the join
+conditions!
+
+11. Return the name of all departments that have a faculty working
+in it.
+
+      name      
+----------------
+ Knowledge
+ Physical Magic
+ Illusions
+ Natural Magic
+(4 rows)
+
+12. Return the name of all courses Prof. Mayakovsky teaching
+in a spring semester.
+
+
+       crsname        
+----------------------
+ Alternate Dimensions
+(1 row)
+
+
+
+13. Select the id and name of students who are taking or have taken a
+course from Profs. Mayakovsky or Fogg.
+
+
+ id  |       name       
+-----+------------------
+ 212 | William Adiyodi
+ 215 | Janet Pluchinsky
+ 231 | Eliot Waugh
+(3 rows)
+
+
+14. Return the id, name of all the students who are have completed a
+course from major 'Illusions'.
+
+
+ id  |       name       
+-----+------------------
+ 215 | Janet Pluchinsky
+ 231 | Eliot Waugh
+(2 rows)
+
+
+15. Return the course name, grade and name of students who took a
+course that requires 'Spellcasting'. Order by student name first and
+then by course name.
+
+
+       name       |        crsname         | grade 
+------------------+------------------------+-------
+ Eliot Waugh      | Advanced Spellcasting  | B+
+ Eliot Waugh      | Practical Applications | A-
+ Janet Pluchinsky | Advanced Spellcasting  | A-
+ William Adiyodi  | Advanced Spellcasting  | B
+(4 rows)
+
+
+-- Special challenge, order by last name!
+
+
+ firstname |  lastname  |        crsname         | grade 
+-----------+------------+------------------------+-------
+ William   | Adiyodi    | Advanced Spellcasting  | B
+ Janet     | Pluchinsky | Advanced Spellcasting  | A-
+ Eliot     | Waugh      | Advanced Spellcasting  | B+
+ Eliot     | Waugh      | Practical Applications | A-
+(4 rows)
+
+
+PART 4. This part adds some basic set/bag operations
+
+16. Return the id, name of all students who are either majoring in
+'Traveler' or are taking a course offered by this major.
+
+
+ id  |      name       
+-----+-----------------
+ 212 | William Adiyodi
+ 231 | Eliot Waugh
+(2 rows)
+
+
+17. Return the id, name of all departments that have no faculty working
+in it.
+
+
+ id |     name      
+----+---------------
+  2 | Psychic Magic
+  4 | Healing
+(2 rows)
+
+18. Return id, name of courses with no prerequisites. Sort by name.
+
+
+ id |      crsname       
+----+--------------------
+  2 | Mazes
+  3 | Minor Mendings
+  1 | Spellcasting
+  7 | Transmogrification
+(4 rows)
+
+
+PART 5. This part adds group by/having and aggregates
+
+19. For each student, return their id, name and total number of
+courses that they have completed (with repeats as attempts and without
+repeats as courses).
+
+
+ id  |       name       | num_courses | num_attempts 
+-----+------------------+-------------+--------------
+ 212 | William Adiyodi  |           3 |            3
+ 215 | Janet Pluchinsky |           3 |            3
+ 231 | Eliot Waugh      |           5 |            6
+(3 rows)
+
+
+20. For each faculty, return id, name, the total number of
+classes/sections they teach in each semester, year.
+
+
+ id |         name          | semester | year | num_sections 
+----+-----------------------+----------+------+--------------
+  5 | Melanie Van Der Weghe | Fall     | 2015 |            1
+  4 | Professor Mayakovsky  | Spring   | 2015 |            1
+  2 | Pearl Sunderland      | Fall     | 2014 |            1
+  4 | Professor Mayakovsky  | Spring   | 2016 |            2
+  3 | Professor March       | Spring   | 2015 |            2
+  4 | Professor Mayakovsky  | Fall     | 2015 |            2
+  3 | Professor March       | Spring   | 2014 |            1
+  2 | Pearl Sunderland      | Spring   | 2015 |            1
+  1 | Henry Fogg            | Spring   | 2016 |            1
+(9 rows)
+
+
+21. Return id, name of faculty, semester and year in which the faculty
+teaches at least two courses.
+
+
+ id |         name         | semester | year 
+----+----------------------+----------+------
+  4 | Professor Mayakovsky | Spring   | 2016
+  3 | Professor March      | Spring   | 2015
+  4 | Professor Mayakovsky | Fall     | 2015
+(3 rows)
+
+22. Return id, name of faculty who teach at least two courses in at
+least one semester and year.
+
+
+ id |         name         
+----+----------------------
+  3 | Professor March
+  4 | Professor Mayakovsky
+(2 rows)
+

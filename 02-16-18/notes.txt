@@ -1,0 +1,60 @@
+examples:
+
+select * from classes;
+-- just gets the whole classes relation
+
+select case (couse_id as varchar) || ':(' || semester || '-' || cast(year as varchar) || ')' as course_info;
+-- returns this info in one string with the column "course_info"
+
+select * from meeting_times;
+-- returns whole meeting_times relation
+
+select course_id, semester, year, section, to_char(meetingtime, 'HH:MI A.M.') as meeting_time from meeting_times;
+-- formats the time in a custom way and also includes the other things
+
+select course_id, prereq_id, trunc(extract(days from now() - enforcedsince)/30) as months from requires;
+-- doing some actual math on the right, getting the amount of months
+
+SELECT id, name, address
+FROM students
+WHERE year = 2020 and major = 'PHYS';
+-- having a relational algebra project in here
+
+SELECT name, year FROM students WHERE email like '%alumni%';
+-- alumni is somewhere in the meial
+
+SELECT name FROM students WHERE substring(name, position(' ' in name) + 1) like 'A%';
+
+SELECT course_id, semester, year, section, days
+FROM meeting_times
+WHERE (days like '%M%' or days like '%W%' or days like '%F%') and (days not like '%T%' and days not like '%R');
+
+SELECT DISTINCT course_id, semester, year, section
+FROM transcript
+WHERE grade is NULL;
+-- distinct removed any redundancies
+
+SELECT DISTINCT course_id, semester, year, section
+FROM meeting_times
+WHERE listingoder is not null;
+
+SELECT DISTINCT
+	d.name
+FROM
+	departments d
+	, faculty f
+WHERE
+	d.id = f.dept_id;
+-- return the name of all departments that have a faculty working in it
+
+SELECT DISTINCT
+	co.crsname
+FROM
+	classes c
+	, courses co
+	, faculty f
+WHERE
+	c.course_id - co.id
+	AND c.instructor_id = f.id
+	AND f.name like '%Mayakovsky%'
+	and c.semester = 'Spring';
