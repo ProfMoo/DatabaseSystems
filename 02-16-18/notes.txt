@@ -58,3 +58,4 @@ WHERE
 	AND c.instructor_id = f.id
 	AND f.name like '%Mayakovsky%'
 	and c.semester = 'Spring';
+-- returns the name of all courses Prof. Mayanovsky teachign in a spring sem.
