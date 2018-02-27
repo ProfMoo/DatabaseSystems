@@ -1,0 +1,1047 @@
+id|sid|name|etype
+1|1|Military Patrol|m
+2|2|Four-Man|m
+3|3|Curling|m
+4|4|Ice Hockey|m
+5|5|Individual|m
+6|5|Individual|w
+7|5|Pairs|w
+8|5|Pairs|m
+9|6|10000M|m
+10|6|1500M|m
+11|6|5000M|m
+12|6|500M|m
+13|6|Combined (4 Events)|m
+14|7|18KM|m
+15|7|50KM|m
+16|8|Individual|m
+17|9|K90 Individual (70M)|m
+18|2|Five-Man|m
+19|10|Individual|m
+20|2|Two-Man|m
+21|11|Alpine Combined|m
+22|11|Alpine Combined|w
+23|7|4X10KM Relay|m
+24|11|Downhill|m
+25|11|Downhill|w
+26|11|Slalom|m
+27|11|Slalom|w
+28|11|Giant Slalom|m
+29|11|Giant Slalom|w
+30|7|10KM|w
+31|7|15KM|m
+32|7|30KM Mass Start|m
+33|7|3X5KM Relay|w
+34|1|20KM|m
+35|6|1000M|w
+36|6|1500M|w
+37|6|3000M|w
+38|6|500M|w
+39|12|Doubles|m
+40|12|Singles|m
+41|12|Singles|w
+42|7|5KM|w
+43|9|K120 Individual (90M)|m
+44|1|4X7.5KM Relay|m
+45|5|Ice Dancing|m
+46|5|Ice Dancing|w
+47|6|1000M|m
+48|7|4X5KM Relay|w
+49|1|10KM|m
+50|7|20KM|w
+51|6|5000M|w
+52|11|Super-G|m
+53|11|Super-G|w
+54|8|Team|m
+55|9|K120 Team (90M)|m
+56|1|15KM|w
+57|1|4X7.5KM Relay|w
+58|1|7.5KM|w
+59|13|1000M|m
+60|13|3000M Relay|w
+61|13|5000M Relay|m
+62|13|500M|w
+63|7|10KM Pursuit|m
+64|7|15KM Mass Start|w
+65|7|30KM|w
+66|7|Combined 10KM + 15KM Pursuit|m
+67|7|Combined 5KM + 10KM Pursuit|w
+68|14|Moguls|m
+69|14|Moguls|w
+70|13|1000M|w
+71|13|500M|m
+72|14|Aerials|m
+73|14|Aerials|w
+74|3|Curling|w
+75|4|Ice Hockey|w
+76|15|Giant-Slalom|m
+77|15|Giant-Slalom|w
+78|15|Half-Pipe|m
+79|15|Half-Pipe|w
+80|1|10KM Pursuit|w
+81|1|12.5Km Pursuit|m
+82|2|Two-Man|w
+83|10|Individual|w
+84|13|1500M|m
+85|13|1500M|w
+86|7|5Km Pursuit|w
+87|7|Sprint 1.5KM|m
+88|7|Sprint 1.5KM|w
+89|8|Sprint|m
+90|15|Giant Parallel Slalom|m
+91|15|Giant Parallel Slalom|w
+92|1|12.5KM Mass Start|w
+93|1|15KM Mass Start|m
+94|1|4X6KM Relay|w
+95|6|Team Pursuit|m
+96|6|Team Pursuit|w
+97|7|Combined 15 + 15KM Mass Start|m
+98|7|Combined 7.5 + 7.5Km Mass Start|w
+99|7|Team Sprint|m
+100|7|Team Sprint|w
+101|8|Individual Sprint|m
+102|15|Snowboard Cross|m
+103|15|Snowboard Cross|w
+104|11|Super Combined|m
+105|11|Super Combined|w
+106|14|Ski Cross|m
+107|14|Ski Cross|w
+108|8|Individual, Ski Jumping K90 (70M)|m
+109|8|Sprint K120|m
+110|8|Team, 4X5 KM|m
+111|1|Relay Mix|m
+112|1|Relay Mix|w
+113|2|Two-Woman|w
+114|12|Mixed Relay|m
+115|12|Mixed Relay|w
+116|5|Team|m
+117|5|Team|w
+118|7|Combined 15+15K|m
+119|7|Combined7.5+7.5|w
+120|14|Ski Halfpipe|m
+121|14|Ski Slopestyle|m
+122|14|Ski Halfpipe|w
+123|14|Ski Slopestyle|w
+124|8|Ind. K90 (70M)|m
+125|9|Large Hill|m
+126|9|Normal Hill|m
+127|9|Teams|m
+128|9|K90 Individual|w
+129|15|Giant Parall.S.|m
+130|15|Parallel Slalom|m
+131|15|Slopestyle|m
+132|15|Giant Parall.S.|w
+133|15|Parallel Slalom|w
+134|15|Slopestyle|w
+135|16|100M Freestyle|m
+136|16|100M Freestyle For Sailors|m
+137|16|1200M Freestyle|m
+138|16|400M Freestyle|m
+139|17|100M|m
+140|17|110M Hurdles|m
+141|17|1500M|m
+142|17|400M|m
+143|17|800M|m
+144|17|Discus Throw|m
+145|17|High Jump|m
+146|17|Long Jump|m
+147|17|Marathon|m
+148|17|Pole Vault|m
+149|17|Shot Put|m
+150|17|Triple Jump|m
+151|18|Individual Road Race|m
+152|19|100KM|m
+153|19|10KM|m
+154|19|12-Hour Race|m
+155|19|1KM Time Trial|m
+156|19|Sprint Indivual|m
+157|20|Foil Individual|m
+158|20|Foil, Masters|m
+159|20|Sabre Individual|m
+160|21|Horizontal Bar|m
+161|21|Parallel Bars|m
+162|21|Pommel Horse|m
+163|21|Rings|m
+164|21|Rope Climbing|m
+165|21|Team, Horizontal Bar|m
+166|21|Team, Parallel Bars|m
+167|21|Vault|m
+168|22|25M Army Pistol|m
+169|22|25M Rapid Fire Pistol (60 Shots)|m
+170|22|50M Pistol (60 Shots)|m
+171|22|Army Rifle, 200M|m
+172|22|Army Rifle, 300M|m
+173|23|Doubles|m
+174|23|Singles|m
+175|24|Heavyweight - One Hand Lift|m
+176|24|Heavyweight - Two Hand Lift|m
+177|25|Open Event|m
+178|16|1500M Freestyle|m
+179|16|200M Backstroke|m
+180|16|200M Freestyle|m
+181|16|200M Obstacle Event|m
+182|16|200M Team Swimming|m
+183|16|4000M Freestyle|m
+184|16|Underwater Swimming|m
+185|26|Water Polo|m
+186|27|Au Chapelet, 33M|m
+187|27|Au Chapelet, 50M|m
+188|27|Au Cordon Dore, 33M|m
+189|27|Au Cordon Dore, 50M|m
+190|27|Sur La Perche A La Herse|m
+191|27|Sur La Perche A La Pyramide|m
+192|17|200M|m
+193|17|200M Hurdles|m
+194|17|3000M Steeplechase|m
+195|17|4000M Steeplechase|m
+196|17|400M Hurdles|m
+197|17|5000M Team|m
+198|17|60M|m
+199|17|Hammer Throw|m
+200|17|High Jump, Standing|m
+201|17|Long Jump, Standing|m
+202|17|Triple Jump, Standing|m
+203|28|Cesta Punta|m
+204|29|Cricket|m
+205|30|Double|m
+206|30|Individual 1 Ball|m
+207|30|Individual 2 Balls|m
+208|19|25 Kilometres|m
+209|31|High Jump|m
+210|31|Individual|m
+211|31|Long Jump Individual|m
+212|20|Epee Individual|m
+213|20|Epee, Amateurs And Masters|m
+214|20|Epee, Masters|m
+215|20|Sabre, Masters|m
+216|32|Football|m
+217|33|Individual|m
+218|33|Individual|w
+219|21|Individual All-Round|m
+220|34|Polo|m
+221|35|Eight With Coxswain (8+)|m
+222|35|Four-Oared Shell With Coxswain (4-)|m
+223|35|Pair-Oared Shell With Coxswain (2+)|m
+224|35|Single Sculls (1X)|m
+225|36|Rugby|m
+226|37|0.5-1T|m
+227|37|10-20T|m
+228|37|3-10T|m
+229|37|Open Class|m
+230|22|50M Army Pistol, Team|m
+231|22|Army Rifle, 300M, 3 Positions|m
+232|22|Army Rifle, 300M, Kneeling|m
+233|22|Army Rifle, 300M, Prone|m
+234|22|Army Rifle, 300M, Standing|m
+235|22|Free Rifle, Team|m
+236|22|Trap (125 Targets)|m
+237|23|Mixed Doubles|m
+238|23|Mixed Doubles|w
+239|23|Singles|w
+240|38|Tug Of War|m
+241|39|10M Platform|m
+242|39|Plunge For Distance|m
+243|16|100M Backstroke|m
+244|16|400M Breaststroke|m
+245|16|4X50Y Freestyle Relay|m
+246|16|50Y Freestyle (45.72M)|m
+247|16|880Y Freestyle (804.66M)|m
+248|27|Double American Round (60Y - 50Y - 40Y)|m
+249|27|Double Columbia Round (50Y - 40Y - 30Y)|w
+250|27|Double National Round (60Y - 50Y)|w
+251|27|Double York Round (100Y - 80Y - 60Y)|m
+252|27|Team Round 60Y|m
+253|27|Teams Fita Round|w
+254|17|4Miles Team|m
+255|17|56LB Weight Throw (25.4KG)|m
+256|17|Decathlon|m
+257|17|Triathlon (Long Jump / Shot Put / 100 Yards)|m
+258|40|- 47.63KG (Flyweight)|m
+259|40|+ 71.67KG (Heavyweight)|m
+260|40|47.63 - 52.16KG (Bantamweight)|m
+261|40|52.16 - 56.7KG (Featherweight)|m
+262|40|56.7 - 61.24KG (Lightweight)|m
+263|40|61.24 - 65.77KG (Welterweight)|m
+264|40|65.77 - 71.67KG (Middleweight)|m
+265|19|1 Mile (1609.3M)|m
+266|19|1/2 Mile (804.7M)|m
+267|19|1/3 Mile (536.5M)|m
+268|19|1/4 Mile (402.3M)|m
+269|19|2 Miles (3.218KM)|m
+270|19|25 Miles (40.232KM)|m
+271|19|5 Miles (8.046KM)|m
+272|20|Foil Team|m
+273|20|Stick, Single|m
+274|33|Team|m
+275|21|Club Swinging|m
+276|21|Combined 3 Events|m
+277|21|Combined 4 Events|m
+278|21|Team Competition|m
+279|41|Lacrosse|m
+280|42|Individual|m
+281|35|Coxless Pair (2-)|m
+282|35|Double Sculls (2X)|m
+283|35|Four Without Coxswain (4-)|m
+284|24|All-Around Dumbbell Contest|m
+285|43|- 47.6KG (Light-Flyweight)|m
+286|43|+ 71.67KG (Heavyweight)|m
+287|43|47.6 - 52.16KG (Flyweight)|m
+288|43|52.16 - 56.7KG (Bantamweight)|m
+289|43|56.7 - 61.23KG (Featherweight)|m
+290|43|61.23 - 65.77KG (Lightweight)|m
+291|43|65.77 - 71.67KG (Welterweight)|m
+292|39|3M Springboard|m
+293|16|200M Breaststroke|m
+294|16|4X200M Freestyle Relay|m
+295|27|Continental Style 50M|m
+296|27|National Round (60Y - 50Y)|w
+297|27|York Round (100Y - 80Y - 60Y)|m
+298|17|10Miles Walk (16093M)|m
+299|17|3200M Steeplechase|m
+300|17|3500M Walk|m
+301|17|3Miles Team (4828M)|m
+302|17|4X400M Relay|m
+303|17|5 Miles (8047M)|m
+304|17|Discus Throw Ancient Style|m
+305|17|Javelin Throw|m
+306|17|Javelin Throw Freestyle|m
+307|40|- 52.62KG (Bantamweight)|m
+308|40|52.62 - 57.15KG (Featherweight)|m
+309|40|57.15 - 63.5KG (Lightweight)|m
+310|40|63.5 - 71.67KG (Middleweight)|m
+311|19|1980 Yards Pursuit, Team|m
+312|19|2000M Tandem|m
+313|19|20KM|m
+314|19|5000M|m
+315|19|One Lap (660Y) Sprint|m
+316|20|Epee Team|m
+317|20|Sabre Team|m
+318|44|Hockey|m
+319|45|Individual|m
+320|46|Double|m
+321|46|Individual|m
+322|37|12M|m
+323|37|6M|m
+324|37|7M|m
+325|37|8M|m
+326|22|1000Y Free Rifle, Prone|m
+327|22|100M Running Deer, Double Shots|m
+328|22|100M Running Deer, Single Shots|m
+329|22|100M Running Deer, Single Shots, Team|m
+330|22|25Y Small Bore Rifle, Disappearing Target|m
+331|22|25Y Small Bore Rifle, Moving Target|m
+332|22|300M Free Rifle 3 Positions (3X40 Shots)|m
+333|22|50+100Y Small Bore Rifle, Team|m
+334|22|50M Rifle Prone (60 Shots)|m
+335|22|50Y Army Pistol, Team|m
+336|22|Clay Pigeons, Team|m
+337|22|Rifle, Team|m
+338|47|Individual|m
+339|47|Individual|w
+340|47|Pairs|m
+341|47|Pairs|w
+342|47|Special Figures|m
+343|23|Doubles Indoor|m
+344|23|Singles Indoor|m
+345|23|Singles Indoor|w
+346|48|8M Class C|m
+347|48|Class B Up To 60 Feet|m
+348|48|Open Class A|m
+349|43|- 54KG (Bantamweight)|m
+350|43|+ 73KG (Heavyweight)|m
+351|43|54 - 60.3KG (Featherweight)|m
+352|43|60.3 - 66.6KG (Lightweight)|m
+353|43|66.6 - 73KG (Middleweight)|m
+354|25|- 66.6KG (Lightweight)|m
+355|25|+ 93KG (Super Heavyweight)|m
+356|25|66.6 - 73KG (Middleweight)|m
+357|25|73 - 93KG (Light-Heavyweight)|m
+358|39|10M Platform|w
+359|39|Plain High Diving|m
+360|16|100M Freestyle|w
+361|16|4X100M Freestyle Relay|w
+362|17|10000M|m
+363|17|10000M Walk|m
+364|17|3000M Team|m
+365|17|4X100M Relay|m
+366|17|5000M|m
+367|17|Cross Country Individual|m
+368|17|Cross Country Team|m
+369|17|Discus Throw, Both Hands|m
+370|17|Javelin Throw, Both Hands|m
+371|17|Pentathlon|m
+372|17|Shot Put, Both Hands|m
+373|18|Individual Time Trial|m
+374|18|Team Time Trial|m
+375|49|Individual|m
+376|50|Individual|m
+377|50|Team|m
+378|31|Team|m
+379|21|Team, Free System|m
+380|21|Team, Swedish System|m
+381|51|Individual Competition|m
+382|35|Coxed Fours Jugriggers|m
+383|37|10M|m
+384|22|25M Small Bore Rifle, Team|m
+385|22|25M Small Rifle|m
+386|22|30M Army Pistol, Team|m
+387|22|50M Small Bore Rifle, Team|m
+388|22|600M Free Rifle|m
+389|23|Mixed Doubles Indoor|m
+390|23|Mixed Doubles Indoor|w
+391|25|- 60KG (Featherweight)|m
+392|25|+ 82.5KG (Super Heavyweight)|m
+393|25|60 - 67.5KG (Lightweight)|m
+394|25|67.5 - 75KG (Middleweight)|m
+395|25|75 - 82.5KG (Light-Heavyweight)|m
+396|39|3M Springboard|w
+397|16|400M Freestyle|w
+398|27|Fixed Bird Target Large Birds|m
+399|27|Fixed Bird Target Large Birds Teams|m
+400|27|Fixed Bird Target Small Bird, Teams|m
+401|27|Fixed Bird Target Small Birds|m
+402|27|Moving Bird Target 28M Teams|m
+403|27|Moving Bird Target 33M Teams|m
+404|27|Moving Bird Target 50M Teams|m
+405|27|Moving Bird Target, 28M|m
+406|27|Moving Bird Target, 33M|m
+407|27|Moving Bird Target, 50M|m
+408|17|3000M Walk|m
+409|40|- 50.8KG (Flyweight)|m
+410|40|+ 79.38KG (Heavyweight)|m
+411|40|50.8 - 53.52KG (Bantamweight)|m
+412|40|53.52 - 57.15KG (Featherweight)|m
+413|40|57.15 - 61.24KG (Lightweight)|m
+414|40|61.24 - 66.68KG (Welterweight)|m
+415|40|66.68 - 72.57KG (Middleweight)|m
+416|40|72.57 - 79.38KG (Light-Heavyweight)|m
+417|19|50KM|m
+418|19|Team Pursuit (4000M)|m
+419|52|Figure Riding Individual|m
+420|52|Figure Riding Team|m
+421|53|Ice Hockey|m
+422|37|10M (Rating 1907)|m
+423|37|10M (Rating 1919)|m
+424|37|12 Foot Dinghy|m
+425|37|12M (Rating 1907)|m
+426|37|12M (Rating 1919)|m
+427|37|18 Foot Dinghy|m
+428|37|30M Sq|m
+429|37|40M Sq|m
+430|37|6.5M (Rating 1919)|m
+431|37|6M (Rating 1907)|m
+432|37|6M (Rating 1919)|m
+433|37|7M|w
+434|37|8M (Rating 1907)|m
+435|37|8M (Rating 1919)|m
+436|22|100M Running Deer, Double Shots, Team|m
+437|22|300+600M Free Rifle, Team, Prone|m
+438|22|300M Free Rifle, Prone, Team|m
+439|22|300M Free Rifle, Standing, Team|m
+440|22|50M Small Bore Rifle, Standing, Individual|m
+441|22|600M Free Rifle, Prone|m
+442|22|600M Free Rifle, Team|m
+443|23|Doubles|w
+444|24|- 60KG, One-Two Hand 3 Events (Featherweight)|m
+445|24|+ 82.5KG, One-Two Hand 3 Events (Heavyweight)|m
+446|24|60 - 67.5KG, One-Two Hand 3 Events (Lightweight)|m
+447|24|67.5 - 75KG, One-Two Hand 3 Events (Middleweight)|m
+448|24|75 - 82.5KG, One-Two Hand 3 E. (Light-Heavyweight)|m
+449|43|- 60KG (Featherweight)|m
+450|43|+ 80KG (Heavyweight)|m
+451|43|60 - 67.5KG (Lightweight)|m
+452|43|67.5 - 75KG (Middleweight)|m
+453|43|75 - 80KG (Light-Heavyweight)|m
+454|25|+ 82KG (Super Heavyweight)|m
+455|25|75 - 82KG (Light-Heavyweight)|m
+456|16|100M Backstroke|w
+457|16|200M Breaststroke|w
+458|50|Team|w
+459|20|Foil Individual|w
+460|21|Sidehorse Vault|m
+461|37|Olympic Class Monotype|m
+462|22|400, 600, 800M Free Rifle, Team|m
+463|22|600M Free Rifle, Individual|m
+464|24|- 60KG, One-Two Hand 5 Events (Featherweight)|m
+465|24|+ 82.5KG, One-Two Hand 5 Events (Heavyweight)|m
+466|24|60 - 67.5KG, One-Two Hand 5 Events (Lightweight)|m
+467|24|67.5 - 75KG, One-Two Hand 5 Events (Middleweight)|m
+468|24|75 - 82.5KG, One-Two Hand 5 E. (Light-Heavyweight)|m
+469|43|- 56KG (Bantamweight)|m
+470|43|+ 87KG (Heavyweight)|m
+471|43|56 - 61KG (Featherweight)|m
+472|43|61 - 66KG (Lightweight)|m
+473|43|66 - 72KG (Welterweight)|m
+474|43|72 - 79KG (Middleweight)|m
+475|43|79 - 87KG (Light-Heavyweight)|m
+476|25|- 58KG (Bantamweight)|m
+477|25|58 - 62KG (Featherweight)|m
+478|25|62 - 67.5KG (Lightweight)|m
+479|17|100M|w
+480|17|4X100M Relay|w
+481|17|800M|w
+482|17|Discus Throw|w
+483|17|High Jump|w
+484|19|1KM Pursuit|m
+485|49|Team|m
+486|31|Individual|w
+487|21|Team Competition|w
+488|37|12 Foot Dinghy Individual|m
+489|37|8M|w
+490|24|- 60KG, Total (Featherweight)|m
+491|24|+ 82.5KG, Total (Heavyweight)|m
+492|24|60 - 67.5KG, Total (Lightweight)|m
+493|24|67.5 - 75KG, Total (Middleweight)|m
+494|24|75 - 82.5KG, Total (Light-Heavyweight)|m
+495|25|58 - 60KG (Featherweight)|m
+496|17|50KM Walk|m
+497|17|80M Hurdles|w
+498|17|Javelin Throw|w
+499|40|50.8 - 54KG (Bantamweight)|m
+500|40|54 - 57.15KG (Featherweight)|m
+501|21|Floor Exercises|m
+502|21|Indian Clubs|m
+503|21|Tumbling|m
+504|37|Two-Person Keelboat Open (Star)|m
+505|25|- 56KG (Bantamweight)|m
+506|25|+ 87KG (Super Heavyweight)|m
+507|25|56 - 61KG (Featherweight)|m
+508|25|61 - 66KG (Lightweight)|m
+509|25|66 - 72KG (Welterweight)|m
+510|25|72 - 79KG (Middleweight)|m
+511|25|79 - 87KG (Light-Heavyweight)|m
+512|54|Basketball|m
+513|55|C-1 1000M (Canoe Single)|m
+514|55|C-2 10000M|m
+515|55|C-2 1000M (Canoe Double)|m
+516|55|Folding K-1 10000M|m
+517|55|Folding K-2 10000M|m
+518|55|K-1 10000M|m
+519|55|K-1 1000M (Kayak Single)|m
+520|55|K-2 10000M|m
+521|55|K-2 1000M (Kayak Double)|m
+522|56|Handball|m
+523|17|200M|w
+524|17|Long Jump|w
+525|17|Shot Put|w
+526|40|- 51KG (Flyweight)|m
+527|40|+ 80KG (Heavyweight)|m
+528|40|51 - 54KG (Bantamweight)|m
+529|40|54 - 58KG (Featherweight)|m
+530|40|58 - 62KG (Lightweight)|m
+531|40|62 - 67KG (Welterweight)|m
+532|40|67 - 73KG (Middleweight)|m
+533|40|73 - 80KG (Light-Heavyweight)|m
+534|55|C-1 10000M|m
+535|55|K-1 500M (Kayak Single)|w
+536|37|Dragon|m
+537|37|Firefly Class|m
+538|37|Swallow (Golondrina)|m
+539|24|- 56KG, Total (Bantamweight)|m
+540|24|56 - 60KG, Total (Featherweight)|m
+541|43|- 52KG (Flyweight)|m
+542|43|52 - 57KG (Bantamweight)|m
+543|43|57 - 63KG (Featherweight)|m
+544|43|63 - 67KG (Lightweight)|m
+545|43|67 - 73KG (Welterweight)|m
+546|43|73 - 79KG (Middleweight)|m
+547|25|- 52KG (Flyweight)|m
+548|25|52 - 57KG (Bantamweight)|m
+549|25|57 - 61KG (Featherweight)|m
+550|25|61 - 67KG (Lightweight)|m
+551|25|67 - 73KG (Welterweight)|m
+552|25|73 - 79KG (Middleweight)|m
+553|40|+ 81KG (Heavyweight)|m
+554|40|54 - 57KG (Featherweight)|m
+555|40|57 - 60KG (Lightweight)|m
+556|40|60 - 63.5KG (Light-Welterweight)|m
+557|40|63.5 - 67KG (Welterweight)|m
+558|40|67 - 71KG (Light-Middleweight)|m
+559|40|71-75KG|m
+560|40|75 - 81KG (Light-Heavyweight)|m
+561|49|Individual|w
+562|49|Team|w
+563|21|Balance Beam|w
+564|21|Floor Exercises|w
+565|21|Individual All-Round|w
+566|21|Team, Portable Apparatus|w
+567|21|Uneven Bars|w
+568|21|Vault|w
+569|51|Team Competition|m
+570|37|5.5M|m
+571|37|5.5M|w
+572|37|6M|w
+573|37|Single-Handed Dinghy (Finn)|m
+574|22|100M Running Deer, Single/Double Shots|m
+575|22|50M Rifle 3 Positions (3X40 Shots)|m
+576|24|+ 90KG, Total (Heavyweight)|m
+577|24|82.5 - 90KG, Total (Middle-Heavyweight)|m
+578|16|100M Butterfly|w
+579|16|200M Butterfly|m
+580|17|20KM Walk|m
+581|31|Team|w
+582|37|Sharpie 12M2|m
+583|16|4X100M Medley Relay|m
+584|16|4X100M Medley Relay|w
+585|55|K-1 4X500M|m
+586|55|K-2 500M (Kayak Double)|w
+587|20|Foil Team|w
+588|37|Flying Dutchman|m
+589|16|400M Individual Medley|m
+590|16|400M Individual Medley|w
+591|16|4X100M Freestyle Relay|m
+592|17|400M|w
+593|17|Pentathlon|w
+594|55|K-4 1000M (Kayak Four)|m
+595|19|Individual Pursuit|m
+596|57|- 68KG (Lightweight)|m
+597|57|+ 80KG (Heavyweight)|m
+598|57|68 - 80KG (Middleweight)|m
+599|57|Open Category|m
+600|58|Volleyball|m
+601|58|Volleyball|w
+602|43|+ 97KG (Heavyweight)|m
+603|43|63 - 70KG (Lightweight)|m
+604|43|70 - 78KG (Welterweight)|m
+605|43|78 - 87KG (Middleweight)|m
+606|43|87 - 97KG (Light-Heavyweight)|m
+607|25|+ 97KG (Super Heavyweight)|m
+608|25|57 - 63KG (Featherweight)|m
+609|25|63 - 70KG (Lightweight)|m
+610|25|70 - 78KG (Welterweight)|m
+611|25|78 - 87KG (Middleweight)|m
+612|25|87 - 97KG (Light-Heavyweight)|m
+613|16|100M Breaststroke|m
+614|16|100M Breaststroke|w
+615|16|100M Butterfly|m
+616|16|200M Backstroke|w
+617|16|200M Butterfly|w
+618|16|200M Freestyle|w
+619|16|200M Individual Medley|m
+620|16|200M Individual Medley|w
+621|16|800M Freestyle|w
+622|40|- 48KG (Light-Flyweight)|m
+623|40|48 - 51KG (Flyweight)|m
+624|22|Skeet (125 Targets)|m
+625|27|Individual Fita Round|m
+626|27|Individual Fita Round|w
+627|17|100M Hurdles|w
+628|17|1500M|w
+629|17|4X400M Relay|w
+630|59|C-1 (Canoe Single)|m
+631|59|C-2 (Canoe Double)|m
+632|59|K-1 (Kayak Single)|m
+633|59|K-1 (Kayak Single)|w
+634|57|- 63KG (Lightweight)|m
+635|57|+ 93KG (Heavyweight)|m
+636|57|63 - 70KG (Half-Middleweight)|m
+637|57|70 - 80KG (Middleweight)|m
+638|57|80 - 93KG (Half-Heavyweight)|m
+639|37|Fleet/Match Race Keelboat Open (Soling)|m
+640|37|Tempest|m
+641|22|50M Running Target (30+30 Shots)|m
+642|24|- 52KG, Total (Flyweight)|m
+643|24|+ 110KG, Total (Super Heavyweight)|m
+644|24|52 - 56KG, Total (Bantamweight)|m
+645|24|91 - 110KG, Total (Heavyweight)|m
+646|43|- 48KG (Light-Flyweight)|m
+647|43|+ 100KG (Super Heavyweight)|m
+648|43|48 - 52KG (Flyweight)|m
+649|43|57 - 62KG (Featherweight)|m
+650|43|62 - 68KG (Lightweight)|m
+651|43|68 - 74KG (Welterweight)|m
+652|43|74 - 82KG (Middleweight)|m
+653|43|82 - 90KG (Light-Heavyweight)|m
+654|43|90 - 100KG (Heavyweight)|m
+655|25|- 48KG (Light-Flyweight)|m
+656|25|+ 100KG (Super Heavyweight)|m
+657|25|48 - 52KG (Flyweight)|m
+658|25|57 - 62KG (Featherweight)|m
+659|25|62 - 68KG (Lightweight)|m
+660|25|68 - 74KG (Welterweight)|m
+661|25|74 - 82KG (Middleweight)|m
+662|25|82 - 90KG (Light-Heavyweight)|m
+663|25|90 - 100KG (Heavyweight)|m
+664|54|Basketball|w
+665|55|C-1 500M (Canoe Single)|m
+666|55|C-2 500M (Canoe Double)|m
+667|55|K-1 500M (Kayak Single)|m
+668|55|K-2 500M (Kayak Double)|m
+669|56|Handball|w
+670|35|Double Sculls (2X)|w
+671|35|Eight With Coxswain (8+)|w
+672|35|Four-Oared Shell With Coxswain (4-)|w
+673|35|Pair Without Coxswain (2-)|w
+674|35|Quadruple Sculls With Coxswain (4X)|w
+675|35|Quadruple Sculls Without Coxswain (4X)|m
+676|35|Single Sculls (1X)|w
+677|37|470 - Two Person Dinghy|m
+678|37|Tornado - Multihull|m
+679|22|50M Rifle 3 Positions (3X40 Shots)|w
+680|44|Hockey|w
+681|57|- 60 KG|m
+682|57|+ 95KG (Heavyweight)|m
+683|57|60 - 65KG (Half-Lightweight)|m
+684|57|65 - 71KG (Lightweight)|m
+685|57|71 - 78KG (Half-Middleweight)|m
+686|57|78 - 86KG (Middleweight)|m
+687|57|86 - 95KG (Half-Heavyweight)|m
+688|24|100 - 110KG, Total (Heavyweight)|m
+689|24|90 - 100KG, Total (First-Heavyweight)|m
+690|60|Duet|w
+691|60|Solo|w
+692|17|3000M|w
+693|17|400M Hurdles|w
+694|17|Heptathlon|w
+695|17|Marathon|w
+696|40|+ 91KG (Super Heavyweight)|m
+697|40|81 - 91KG (Heavyweight)|m
+698|55|K-4 500M (Kayak Four)|w
+699|18|Individual Road Race|w
+700|19|Points Race|m
+701|50|Individual|w
+702|61|Individual All-Round|w
+703|37|Board (Windglider)|m
+704|22|10M Air Rifle (40 Shots)|w
+705|22|10M Air Rifle (60 Shots)|m
+706|22|25M Pistol (30+30 Shots)|w
+707|22|50M Rifle 3 Positions (3X20 Shots)|w
+708|16|50M Freestyle|m
+709|16|50M Freestyle|w
+710|27|Teams Fita Round|m
+711|17|10000M|w
+712|19|Sprint|w
+713|35|Quadruple Sculls Without Coxswain (4X)|w
+714|37|470 - Two Person Dinghy|w
+715|37|Board (Division Ii)|m
+716|22|10M Air Pistol (40 Shots)|w
+717|22|10M Air Pistol (60 Shots)|m
+718|62|Doubles|m
+719|62|Doubles|w
+720|62|Singles|m
+721|62|Singles|w
+722|43|100 - 130KG (Super Heavyweight)|m
+723|25|100 - 130KG (Super Heavyweight)|m
+724|27|Individual (Fita Olympic Round - 70M)|m
+725|27|Individual (Fita Olympic Round - 70M)|w
+726|27|Team (Fita Olympic Round - 70M)|m
+727|27|Team (Fita Olympic Round - 70M)|w
+728|17|10000M Walk|w
+729|63|Doubles|m
+730|63|Doubles|w
+731|63|Singles|m
+732|63|Singles|w
+733|64|Baseball|m
+734|19|Individual Pursuit|w
+735|57|- 48KG (Extra-Lightweight)|w
+736|57|+ 72KG (Heavyweight)|w
+737|57|48 - 52KG (Half-Lightweight)|w
+738|57|52 - 56KG (Lightweight)|w
+739|57|56 - 61KG (Half-Middleweight)|w
+740|57|61 - 66KG (Middleweight)|w
+741|57|66 - 72KG (Half-Heavyweight)|w
+742|35|Coxless Four (4-)|w
+743|37|Board (Lechner)|m
+744|37|Board (Lechner)|w
+745|37|Single-Handed Dinghy (Europe)|w
+746|22|Skeet (125 Targets)|w
+747|16|4X200M Freestyle Relay|w
+748|60|Team|w
+749|17|5000M|w
+750|17|Triple Jump|w
+751|18|Individual Time Trial|w
+752|19|Points Race|w
+753|65|Cross-Country|m
+754|65|Cross-Country|w
+755|20|Epee Individual|w
+756|20|Epee Team|w
+757|32|Football|w
+758|61|Group Competition|w
+759|57|+ 100KG (Heavyweight)|m
+760|57|60 - 66KG (Half-Lightweight)|m
+761|57|66 - 73KG (Lightweight)|m
+762|57|73 - 81KG (Half-Middleweight)|m
+763|57|81 - 90KG (Middleweight)|m
+764|57|90 - 100KG (Half-Heavyweight)|m
+765|35|Lightweight Coxless Four (4-)|m
+766|35|Lightweight Double Sculls (2X)|m
+767|35|Lightweight Double Sculls (2X)|w
+768|37|Board (Mistral)|m
+769|37|Board (Mistral)|w
+770|37|Single-Handed Dinghy Open (Laser)|m
+771|22|Double Trap (120 Targets)|w
+772|22|Double Trap (150 Targets)|m
+773|66|Softball|w
+774|67|Beach Volleyball|m
+775|67|Beach Volleyball|w
+776|24|- 54KG, Total (Flyweight)|m
+777|24|+ 108KG, Total (Super Heavyweight)|m
+778|24|54 - 59KG, Total (Bantamweight)|m
+779|24|59 - 64KG, Total (Featherweight)|m
+780|24|64 - 70KG, Total (Lightweight)|m
+781|24|70 - 76KG, Total (Middleweight)|m
+782|24|76 - 83KG, Total (Light-Heavyweight)|m
+783|24|83 - 91KG, Total (Middle-Heavyweight)|m
+784|24|91 - 99KG, Total (First-Heavyweight)|m
+785|24|99 - 108KG, Total (Heavyweight)|m
+786|39|Synchronized Diving 10M Platform|m
+787|39|Synchronized Diving 10M Platform|w
+788|39|Synchronized Diving 3M Springboard|m
+789|39|Synchronized Diving 3M Springboard|w
+790|26|Water Polo|w
+791|17|20KM Race Walk|w
+792|17|Hammer Throw|w
+793|17|Pole Vault|w
+794|19|500M Time Trial|w
+795|19|Keirin|m
+796|19|Madison|m
+797|19|Olympic Sprint|m
+798|68|Individual|m
+799|68|Individual|w
+800|57|+ 78KG (Heavyweight)|w
+801|57|52 - 57KG (Lightweight)|w
+802|57|57 - 63KG (Half-Middleweight)|w
+803|57|63 - 70KG (Middleweight)|w
+804|57|70 - 78KG (Half-Heavyweight)|w
+805|51|Individual Competition|w
+806|37|49Er - Skiff|m
+807|22|10M Running Target (30+30 Shots)|m
+808|22|Skeet (75 Targets)|w
+809|22|Trap (75 Targets)|w
+810|69|- 49 KG|w
+811|69|- 58 KG|m
+812|69|+ 67 KG|w
+813|69|+ 80 KG|m
+814|69|49 - 57 KG|w
+815|69|57 - 67 KG|w
+816|69|58 - 68 KG|m
+817|69|68 - 80 KG|m
+818|70|Individual|m
+819|70|Individual|w
+820|24|+ 105KG|m
+821|24|+ 75KG|w
+822|24|105KG|m
+823|24|48KG|w
+824|24|53KG|w
+825|24|56KG|m
+826|24|58KG|w
+827|24|62KG|m
+828|24|63KG|w
+829|24|69KG|m
+830|24|69KG|w
+831|24|75KG|w
+832|24|77KG|m
+833|24|85KG|m
+834|24|94KG|m
+835|43|48 - 54KG|m
+836|43|54 - 58KG|m
+837|43|58 - 63KG|m
+838|43|63 - 69KG|m
+839|43|69 - 76KG|m
+840|43|76 - 85KG|m
+841|43|85 - 97KG|m
+842|43|97 - 130KG|m
+843|25|48 - 54KG|m
+844|25|54 - 58KG|m
+845|25|58 - 63KG|m
+846|25|63 - 69KG|m
+847|25|69 - 76KG|m
+848|25|76 - 85KG|m
+849|25|85 - 97KG|m
+850|25|97 - 130KG|m
+851|40|48KG (Light Flywieght)|m
+852|40|60 - 64 KG|m
+853|40|64 - 69 KG|m
+854|40|69 - 75 KG|m
+855|19|Team Sprint|m
+856|20|Sabre Individual|w
+857|57|- 48 KG|w
+858|37|Star - Keelboat|m
+859|37|Yngling - Keelboat|w
+860|43|- 48KG|w
+861|43|- 55KG|m
+862|43|48 - 55KG|w
+863|43|55 - 60KG|m
+864|43|55 - 63KG|w
+865|43|60 - 66KG|m
+866|43|63 - 72KG|w
+867|43|66 - 74KG|m
+868|43|74 - 84KG|m
+869|43|84 - 96KG|m
+870|43|96 - 120KG|m
+871|25|- 55KG|m
+872|25|55 - 60KG|m
+873|25|60 - 66KG|m
+874|25|66 - 74KG|m
+875|25|74 - 84KG|m
+876|25|84 - 96KG|m
+877|25|96 - 120KG|m
+878|16|Marathon 10KM|m
+879|16|Marathon 10KM|w
+880|17|3000M Steeplechase|w
+881|71|Individual|m
+882|71|Individual|w
+883|20|Sabre Team|w
+884|37|Finn - Heavyweight Dinghy|m
+885|37|Laser - One Person Dinghy|m
+886|37|Laser Radial - One Person Dinghy|w
+887|37|Rs:X - Windsurfer|m
+888|37|Rs:X - Windsurfer|w
+889|62|Team|m
+890|62|Team|w
+891|39|Synchronized 10M|m
+892|39|Synchronized 10M|w
+893|39|Synchronized 3M|m
+894|39|Synchronized 3M|w
+895|72|10KM|m
+896|72|10KM|w
+897|16|200M Medley|m
+898|16|200M Medley|w
+899|16|400M Medley|m
+900|16|400M Medley|w
+901|16|4X100M Freestyle|m
+902|16|4X100M Freestyle|w
+903|16|4X100M Medley|m
+904|16|4X100M Medley|w
+905|16|4X200M Freestyle|m
+906|16|4X200M Freestyle|w
+907|73|Duet|w
+908|73|Team|w
+909|74|Water Polo|m
+910|74|Water Polo|w
+911|27|Individual|m
+912|27|Individual|w
+913|27|Team|m
+914|27|Team|w
+915|17|3000M Steeple|m
+916|17|3000M Steeple|w
+917|40|+ 91KG|m
+918|40|46 - 49KG|m
+919|40|51 KG|w
+920|40|52KG|m
+921|40|56KG|m
+922|40|57 - 60KG|m
+923|40|60 KG|w
+924|40|75 - 81KG|m
+925|40|75 KG|w
+926|40|81 - 91KG|m
+927|75|C-1 (Single)|m
+928|75|C-2 (Double)|m
+929|75|K-1 (Single)|m
+930|75|K-1 (Single)|w
+931|76|C-1 1000M|m
+932|76|C-1 200M|m
+933|76|C-2 1000M|m
+934|76|K-1 1000M|m
+935|76|K-1 200M|m
+936|76|K-1 200M|w
+937|76|K-1 500M|w
+938|76|K-2 1000M|m
+939|76|K-2 200M|m
+940|76|K-2 500M|w
+941|76|K-4 1000M|m
+942|76|K-4 500M|w
+943|77|Individual|m
+944|77|Individual|w
+945|18|Individual Road|m
+946|18|Individual Road|w
+947|18|Time Trial|m
+948|18|Time Trial|w
+949|19|Keirin|w
+950|19|Omnium|m
+951|19|Omnium|w
+952|19|Sprint|m
+953|19|Team Pursuit|m
+954|19|Team Pursuit|w
+955|19|Team Sprint|w
+956|78|Beam|w
+957|78|Floor Exercises|m
+958|78|Floor Exercises|w
+959|78|Horizontal Bar|m
+960|78|Individual All-Around|m
+961|78|Individual All-Around|w
+962|78|Parallel Bars|m
+963|78|Pommel Horse|m
+964|78|Rings|m
+965|78|Team Competition|m
+966|78|Team Competition|w
+967|78|Uneven Bars|w
+968|78|Vault|m
+969|78|Vault|w
+970|79|Group Competition|w
+971|79|Individual All-Around|w
+972|57|+ 100KG|m
+973|57|+ 78KG|w
+974|57|48 - 52KG|w
+975|57|52 - 57KG|w
+976|57|57 - 63KG|w
+977|57|60 - 66KG|m
+978|57|63 - 70KG|w
+979|57|66 - 73KG|m
+980|57|70 - 78KG|w
+981|57|73 - 81KG|m
+982|57|81 - 90KG|m
+983|57|90 - 100KG|m
+984|80|Individual|m
+985|80|Individual|w
+986|35|Coxless Four|m
+987|35|Coxless Pair 2-|m
+988|35|Coxless Pair 2-|w
+989|35|Double Sculls|m
+990|35|Double Sculls|w
+991|35|Eight With Coxswain|m
+992|35|Eight With Coxswain|w
+993|35|Lightweight 4|m
+994|35|Lightweight Doubles|m
+995|35|Lightweight Doubles|w
+996|35|Quadruple Sculls|m
+997|35|Quadruple Sculls|w
+998|35|Single Sculls|m
+999|35|Single Sculls|w
+1000|37|470|m
+1001|37|470|w
+1002|37|Elliott 6M|w
+1003|37|Finn|m
+1004|37|Laser|m
+1005|37|Laser Radial|w
+1006|37|Rs:X|m
+1007|37|Rs:X|w
+1008|37|Star|m
+1009|22|10M Air Pistol|m
+1010|22|10M Air Pistol|w
+1011|22|10M Air Rifle|m
+1012|22|10M Air Rifle|w
+1013|22|25M Pistol|w
+1014|22|25M Rapid Pistol|m
+1015|22|50M Pistol|m
+1016|22|50M Rifle 3 Positions|m
+1017|22|50M Rifle 3 Positions|w
+1018|22|50M Rifle Prone|m
+1019|22|Double Trap 150|m
+1020|22|Skeet|m
+1021|22|Skeet|w
+1022|22|Trap|m
+1023|22|Trap|w
+1024|81|Beach Volleyball|m
+1025|81|Beach Volleyball|w
+1026|24|+105KG|m
+1027|24|+75KG|w
+1028|24|-56KG|m
+1029|82|Wf 120KG|m
+1030|82|Wf 48 KG|w
+1031|82|Wf 55 KG|m
+1032|82|Wf 55 KG|w
+1033|82|Wf 60 KG|m
+1034|82|Wf 63 KG|w
+1035|82|Wf 66 KG|m
+1036|82|Wf 72 KG|w
+1037|82|Wf 74 KG|m
+1038|82|Wf 84 KG|m
+1039|82|Wf 96 KG|m
+1040|82|Wg 120 KG|m
+1041|82|Wg 55 KG|m
+1042|82|Wg 60 KG|m
+1043|82|Wg 66 KG|m
+1044|82|Wg 74 KG|m
+1045|82|Wg 84 KG|m
+1046|82|Wg 96 KG|m

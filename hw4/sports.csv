@@ -1,0 +1,83 @@
+id|name|discipline|stype
+1|Biathlon|Biathlon|winter
+2|Bobsleigh|Bobsleigh|winter
+3|Curling|Curling|winter
+4|Ice Hockey|Ice Hockey|winter
+5|Skating|Figure skating|winter
+6|Skating|Speed skating|winter
+7|Skiing|Cross Country Skiing|winter
+8|Skiing|Nordic Combined|winter
+9|Skiing|Ski Jumping|winter
+10|Bobsleigh|Skeleton|winter
+11|Skiing|Alpine Skiing|winter
+12|Luge|Luge|winter
+13|Skating|Short Track Speed Skating|winter
+14|Skiing|Freestyle Skiing|winter
+15|Skiing|Snowboard|winter
+16|Aquatics|Swimming|summer
+17|Athletics|Athletics|summer
+18|Cycling|Cycling Road|summer
+19|Cycling|Cycling Track|summer
+20|Fencing|Fencing|summer
+21|Gymnastics|Artistic G.|summer
+22|Shooting|Shooting|summer
+23|Tennis|Tennis|summer
+24|Weightlifting|Weightlifting|summer
+25|Wrestling|Wrestling Gre-R|summer
+26|Aquatics|Water polo|summer
+27|Archery|Archery|summer
+28|Basque Pelota|Basque Pelota|summer
+29|Cricket|Cricket|summer
+30|Croquet|Croquet|summer
+31|Equestrian|Jumping|summer
+32|Football|Football|summer
+33|Golf|Golf|summer
+34|Polo|Polo|summer
+35|Rowing|Rowing|summer
+36|Rugby|Rugby|summer
+37|Sailing|Sailing|summer
+38|Tug of War|Tug of War|summer
+39|Aquatics|Diving|summer
+40|Boxing|Boxing|summer
+41|Lacrosse|Lacrosse|summer
+42|Roque|Roque|summer
+43|Wrestling|Wrestling Free.|summer
+44|Hockey|Hockey|summer
+45|Jeu de paume|Jeu de Paume|summer
+46|Rackets|Rackets|summer
+47|Skating|Figure skating|summer
+48|Water Motorsports|Water Motorspor|summer
+49|Equestrian|Dressage|summer
+50|Equestrian|Eventing|summer
+51|Modern Pentathlon|Modern Pentath.|summer
+52|Equestrian|Vaulting|summer
+53|Ice Hockey|Ice Hockey|summer
+54|Basketball|Basketball|summer
+55|Canoe / Kayak|Canoe / Kayak F|summer
+56|Handball|Handball|summer
+57|Judo|Judo|summer
+58|Volleyball|Volleyball|summer
+59|Canoe / Kayak|Canoe / Kayak S|summer
+60|Aquatics|Synchronized S.|summer
+61|Gymnastics|Rhythmic G.|summer
+62|Table Tennis|Table Tennis|summer
+63|Badminton|Badminton|summer
+64|Baseball|Baseball|summer
+65|Cycling|Mountain Bike|summer
+66|Softball|Softball|summer
+67|Volleyball|Beach volley.|summer
+68|Gymnastics|Trampoline|summer
+69|Taekwondo|Taekwondo|summer
+70|Triathlon|Triathlon|summer
+71|Cycling|BMX|summer
+72|Aquatics|Marathon swimming|summer
+73|Aquatics|Synchronized Swimming|summer
+74|Aquatics|Water Polo|summer
+75|Canoe|Canoe Slalom|summer
+76|Canoe|Canoe Sprint|summer
+77|Cycling|Cycling BMX|summer
+78|Gymnastics|Gymnastics Artistic|summer
+79|Gymnastics|Gymnastics Rhythmic|summer
+80|Modern Pentathlon|Modern Pentathlon|summer
+81|Volleyball|Beach Volleyball|summer
+82|Wrestling|Wrestling Freestyle|summer
