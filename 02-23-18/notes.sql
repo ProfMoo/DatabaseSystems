@@ -346,7 +346,7 @@ We divide this into two parts:
 		f.id
 	HAVING count(*) > [num courses for Sunderland];
 
-So let's combine them:
+--So let's combine them:
 
 	SELECT
 		f.id
