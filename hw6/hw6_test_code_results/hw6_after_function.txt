@@ -1,0 +1,60 @@
+           ?column?            
+-------------------------------
+ select count(*) from events ;
+(1 row)
+
+ count 
+-------
+   261
+(1 row)
+
+                        ?column?                         
+---------------------------------------------------------
+ select count(*) from events where category is not null;
+(1 row)
+
+ count 
+-------
+    68
+(1 row)
+
+              ?column?               
+-------------------------------------
+ select count(*) from summer_medals;
+(1 row)
+
+ count 
+-------
+   318
+(1 row)
+
+               ?column?               
+--------------------------------------
+ select count(*) from winter_medals ;
+(1 row)
+
+ count 
+-------
+   312
+(1 row)
+
+                        ?column?                        
+--------------------------------------------------------
+ num medals in Biathlon, Bobsleigh, Curling, Ice Hockey
+(1 row)
+
+ count 
+-------
+   142
+(1 row)
+
+                    ?column?                    
+------------------------------------------------
+ num medals in Football, Volleyball, Basketball
+(1 row)
+
+ count 
+-------
+    45
+(1 row)
+
