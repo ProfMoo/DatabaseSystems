@@ -1,0 +1,190 @@
+04-10-18
+
+Query processing (Recap)
+HW out later today, due next Tuesday
+
+big way to tell how long a query takes: the amount of pages you have to read from disk
+a database access time becomes important when the DB is very big (cant fit a decent fraction in memory)
+
+-----------------------------------
+
+given an operator -> uses M blocks of memory 
+	- (M means memory unit, usually same size as disk page)
+
+the thing does the operation, then gives it to the output buffer
+	- we dont count the output buffer as part of our total size
+
+we have to use this M # of spaces (fixed) to do our operation
+
+-> Query Cost -> #pages read/write to answer query
+
+----------------------------------------------------------------------
+-- ALL OF THESE OPERATIONS NEED ONE BLOCK FOR READ
+-- THEN THE REST OF M IS USED FOR STORING AND FIGURING OUT OUTPUT
+
+ex: Sequential Scan, M=1 (no indexes)
+	- get from relation R
+	- put into one block
+	- see if it fits what we need
+	- add to output
+
+	cost = #pages in relation R
+
+ex: Duplicates Removal, (DISTINCT)
+	- read from relation R
+	- have one block where you check for
+		- if its new, store in chunk of M-1 blocks
+
+	- only works if M-1 is enough to keep all unique tuples
+
+	cost = #pages in relation R
+
+ex: Group By + Aggregates
+	SELECT
+		A
+		, min(B)
+		, max(C)
+		, avg(D)
+	FROM
+		R
+	GROUP BY
+		A
+
+	- have one block M where you check A
+	- have M-1 blocks where you store current groupings of A (with current min/max/etc)
+
+	- group by -> cannot output anything until completely done (so its called blocking operator)
+
+ex: UNION (no duplicates)
+	- one block
+	- M-1 in other store
+
+	- just adding unique tuples in R+S
+
+	-- read R 
+		-- put uniques in mem
+	-- read S
+		-- put uniques from S and R in mem
+	-- output
+
+	cost = pages(R) + pages(S)
+		- if operation fits in M-1
+
+ex: UNION ALL
+	- only needs one block
+
+	-- read R
+		-- output
+	-- read S
+		-- output
+
+	cost = pages(R) + pages(S)
+		- if operation fits in M-1
+
+ex: INTERSECTION
+	- needs less space than union
+	- but same cost
+
+	-- read R 
+		-- put uniques in mem
+	-- read S
+		-- get rid of stuff that is in mem and not in S
+	-- output
+
+	cost = pages(R) + pages(S)
+		- if operation fits in M-1
+
+ex: SET DIFFERENCE
+	R-S
+	-- read R 
+		-- put uniques in mem
+	-- read S
+		-- get rid of stuff that is in mem and in S
+	-- output
+
+	cost = pages(R) + pages(S)
+		- if operation fits in M-1
+
+--------------------------------------------------------------------
+-- Index Searches
+
+ex: Index ONLY scan
+	-- everything we are searching on has been indexed.
+
+	ex: Index on R(A)
+	SELECT
+		A
+	FROM
+		R
+	WHERE
+		5 <= A <= 15
+
+	ex: Index on R(A,B)
+	SELECT
+		B
+	FROM
+		R
+	WHERE
+		A = 5
+
+	how much space do we need for index only scan?
+		- only one block (we are just linked to the next one)
+		 then, just return matching values
+
+	cost = 1 page from each internal level + # leaf pages scanned
+
+ex: Index + Relation scan
+	ex: 
+	Index on R(A) i1
+	Index on R(B) i2
+	SELECT
+		C
+	FROM
+		R
+	WHERE
+		A = 5 & B = 10
+	- go thru i1, and find A = 5
+	- go thru i2, and find B = 10
+	- compare tuples and do bitwise &&.
+	- see leftover tuples, then read their C value
+		- this last read comes from R
+
+	cost = cost of scanning i1 for A = 5 + cost of scanning i2 for B = 10 + cost of reading matching tuples (could be 1 or #matching tuples)
+
+------------------------------------------------------------------------------------
+So what if it doesn't all fit in memory?
+- relation doesn't fit in memory
+
+M << Pages(R)
+
+We need to sort
+	- external sorting
+
+MULTI-PASS OPERATIONS
+Pass 1
+	- using all M blocks
+		- read # tuples into M, filling it entirely
+		- then sort these, using whatever sort method
+		- write this to temporary storage
+	- using all M blocks
+		- read # tuples into M again
+		- sort
+	- continue this cycle
+
+	cost = PAGES(R) * 2 (because we read then write after sorted)
+
+	ex: PAGES(2) = 2000
+		M = 100
+		---
+		COST = 4000
+		SORTED GROUPS = 2000/100 = 20
+
+Pass 2
+	still have M blocks
+
+	- if M <= #sorted groups, we can finish sorting in this step
+		- we do this by pulling in the first one from each group, then comparing
+
+	- this is merge sort, essentially
+
+Q: Why do we even need to sort? Can't we just scan them all and then put in good stuff?
