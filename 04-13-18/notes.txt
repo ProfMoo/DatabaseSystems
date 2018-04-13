@@ -1,0 +1,146 @@
+Query Processing
+
+Cost -> #pages being read (to memory) or written (back to disk)
+
+We can speed up the total costs through sorting and hashing.
+	- so now, total cost is
+	Cost -> [sorting/hashing] + operation
+
+------------------------------------------------------------------------
+
+Some relation, R
+Some amount of memory available, M
+	- if all of R fits in M, just add to M and sort
+
+Step 1 is sort into groups
+Step 2 is essentially merge sort by comparing first element of each group (in memory)
+
+Pages(R) = 1000, M = 100, 
+	Cost (Step 1) = 2,000 (read, then store 10 sorted groups)
+	Cost (Step 2) = 1,000 (read, sort, then output (output doesn't count for cost))
+	Total Cost -> 3,000
+
+Pages(R) = 1000, M = 20, 
+	Cost (Step 1) = 2,000 (read, then store 50 sorted groups)
+	Cost (Step 2) = 2,000 (read, then store 3 sorted groups)
+	Cost (Step 3) = 1,000 (read, sort, then output (output doesn't count for cost))
+	Total Cost -> 5,000
+
+Pages(R) = 1000, M = 10, 
+	Cost (Step 1) = 2,000 (read, then store 100 sorted groups)
+	Cost (Step 2) = 2,000 (read, then store 10 sorted groups)
+	Cost (Step 3) = 1,000 (read, sort, then output (output doesn't count for cost))
+	Total Cost -> 5,000
+
+Pages(R) = 100,000, M = 50, 
+	Cost (Step 1) = 200,000 (read, then store 2,000 sorted groups)
+	Cost (Step 2) = 200,000 (read, then store 40 sorted groups)
+	Cost (Step 3) = 100,000 (read, sort, then output (output doesn't count for cost))
+	Total Cost -> 500,000
+
+Pages(R) = 550, M = 10, 
+	Cost (Step 1) = 1,100 (read, then store 55 sorted groups)
+	Cost (Step 2) = 1,100 (read, then store 6 sorted groups)
+	Cost (Step 3) = 550 (read, sort, then output (output doesn't count for cost))
+	Total Cost -> 2,750
+	ALTERNATE WAY:
+	Cost (Step 1) = 1,100 (read, then store 55 sorted groups)
+	Cost (Step 2) = 1,000 (read, then store 5 sorted groups from 50) -> 10 leftover
+	Cost (Step 3) = 550 (read, sort, then output (output doesn't count for cost))
+	Total Cost -> 2,650
+
+-------------------------------------------------------------------
+What do we do with these sorted relations?
+	- easier to eliminate duplicates
+	- set union/difference/intersection
+	- group by
+
+ex: Group By
+	FROM R GROUP BY A, min(B), max(C)
+	- just loop thru and find these groups all in a row
+
+	- once we are sorted, cost of group by = 0
+	- this is because we group as we sort, meanign we dont need to access disk
+
+ex: Sorting + Set Union
+	ex:	Set Union 
+		Pages(R) = 1000
+		Pages(S) = 500
+		M = 50
+
+		cost (of sorting): 4000 for R, 2000 for S
+		cost (of reading and outputing unique tuples): 1,500
+		total cost: 4000 + 2000 + 1,500 = 7,500
+
+	ex: Set Union 
+		Pages(R) = 1000
+		Pages(S) = 500
+		M = 50
+		-- but this time, let's not sort R and S so separately
+
+		do first step of sorting, then combine them and put back into M for merge sort
+		cost(of sorting first step): 3000
+		then, merge and get rid of doubles.
+		cost(of merge and double elimination): 1500
+		total cost: 4500
+
+-------------------------------------------------------------------------------
+HASHING
+- divide and conquer
+
+get all of your relation R
+	- hash each tuple, but in appropriate bucket
+	- hopefully, each bucket is about equal size
+
+group by:
+	- hash
+	- do group by in each bucket separately
+
+union:
+	- hash R and hash S into same buckets
+	- read a whole bucket into memory -> do the union operation
+
+	- if we see a repeat in memory while we are doing this, get rid of it
+
+	- what if a bucket does not fit in memory?
+		- could hash the bucket itself, or sort the bucket
+
+--------------------------------------------------------------------------------
+JOIN OPERATOR
+
+naive approach:
+	- a double loop, so cost is N^2
+	- just check each relation in R with each in S, seeing if it matches
+
+	cost = (pages(R)/M-1) * pages(S) + pages(R)
+
+	ex: R join S
+	pages(R) = 1000
+	pages(S) = 200
+	M = 21
+	---
+	cost 	= 1000+200+(1000/20)
+			= 11,000
+
+a better way: flipped, S join R
+	cost 	= 200 + 1000 * (200/20)
+			= 10,200
+
+sort-merge join:
+	sort + sort + [merge + join] -> output
+
+hash join:
+	hash R + hash S -> read each bucket + join
+
+-----------------------------------------------------------------------------------------
+QUERY OPTIMIZATION
+- whole operation is a big pipeline, these aren't separate things
+
+- takes a query
+	- parses query
+	- check syntax/data model
+- optimize
+	- checking if it's possible to unnest
+	- uncorrelate
+- query tree using relational algebra, optimize that too
+	- a lot easier to see relational algebra equivalency (over SQL)
