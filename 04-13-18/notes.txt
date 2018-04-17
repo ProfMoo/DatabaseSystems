@@ -144,3 +144,5 @@ QUERY OPTIMIZATION
 	- uncorrelate
 - query tree using relational algebra, optimize that too
 	- a lot easier to see relational algebra equivalency (over SQL)
+- assign operators -> estimate the cost
+- cost based optimizer (choose cheapest plan)

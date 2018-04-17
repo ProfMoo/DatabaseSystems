@@ -1,0 +1,118 @@
+[04-17-18]
+
+Query Optimization
+- Estimating Output Cardinality
+
+Statistics -> Analyze
+Relation -> #tuples, #pages
+On each attribute A -> #distinct values, min, max value (that is currently stored)
+
+ex: RPI Database
+Students = Tuples(Students) = 7,000
+
+attribute		#distinct		min		  		max
+RIN				7,000			6600000			6699999
+class			5				freshmen		sophomore
+age				15				12				45
+state/country	51 (null too)	Alabama			Wyoming
+
+let's estimate: 
+	- TUPLES(A=C(R)))
+	- we assume each one is equally likely
+	- so if we are selecting a state, we get total size and divide by 51
+
+	- selectivity is 1/#distinct values
+	- ex: class = 'junior' -> selectivity is 1/5
+		this is pretty close
+	- ex: age = '45' -> selectivity is 7,000/(45-12)
+		this is massively wrong
+
+to get this ^^ even better, we can make a histogram. then, we can just pull our info from there
+
+-----------------------------------------------
+if we want c_1 <= A <= c_2 (R)
+	- this is a range search
+
+sometimes range searches are meaningful -> age range
+sometimes they are meaningless -> state range
+
+just turn this into a proportion. how much the range search covers over the total range of relation
+ex: age 12-16
+	(16-12)/(45-12) -> some percentage
+
+this, just like the original, can be accurate or not
+ex: society age range -> pretty accurate
+ex: society pay range -> can be massively incorrect (max salary throws off range)
+
+VVV general formula VVV
+(c_2 - c_1)/(maxval(R)-minval(R))
+
+-----------------------------------------------------------
+ex: 
+7,000 Students(RIN, )
+140,000 Transcript(RIN,CRN,grade)
+
+Q: expected tuples in join
+Students JOIN Transcript
+
+Students has distinct RIN of 7000
+Transcript has distinct RIN <= 7000 (let's say 6500)
+
+(7000*140,000) * (1/max(7,000,6,500)) = 140,000
+^cartesian			^selectivity
+
+Q: transcript JOIN hobbies. how many tuples expected?
+(140,000 * 12,000) * (1/max(6500,6000)) = ABOUT 280,000
+
+------------------------------------------------------------
+BOOLEAN CONDITION
+c1 and c2 = selectivity(c1) * selectivity(c2)
+
+ex: 	class = 'junior' and state = 'az'
+		1/5 * 1/50
+	^ this is if we assume independence
+
+ex:		class = 'graduate' and age = 12
+	^ this isn't independent, there probably aren't that many grads who r 12
+
+ex: class <> 'junior' -> 1 - (1/5) -> 4/5
+	generally not very selective, so not that powerful
+
+ex: class in ('A','B') -> 2/5
+			^just some values A & B
+
+----------------------------------------------------------
+when we get an index, it's important to ask how selective it is
+
+ex:
+Index selectivity:
+	A = 5 & B > 20 & C = 5
+	i1 on R(A,B)
+	-> selectivity on (A = 5 & B > 20)
+		it will scan 1/x of x leaf nodes
+
+---------------------
+How we handle queries
+(1) parse query
+(2) find equivalent query trees
+(3a) implement possible operator implementation + indices
+(3b) estimate size of output
+(4) all query plans and costs
+(5) pick the cheapest one
+
+Always keep in mind: there are many different ways to do join
+	This is important for this query optimization
+
+Join Ordering:
+	R JOIN S JOIN T JOIN W
+
+	Options:
+	(1) ((R JOIN S) JOIN T) JOIN W
+	(2) ((S JOIN R) JOIN T) JOIN W
+	(3) ((T JOIN S) JOIN R) JOIN W
+	... list goes on!!!
+
+	Which one is best?
+
+Left Deep vs. Right Deep vs. Bushy Join:
+	check the pictures on her notes
