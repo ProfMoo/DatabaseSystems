@@ -1,0 +1,100 @@
+SELECTION A = S (R) -> tuples(R)/values(A)
+		values A is selectivity
+
+R JOIN S -> Tuples(R) * Tuples(S) * (1/max values(R.A),values(S.B))
+r.a = s.b
+
+no more query estimation
+=======================================================================
+Transactions & Durability
+
+Tuesday -> Professor Patterson talks about concurrency
+Friday -> Transaction & Durability finished (QUIZ?)
+Next Tuesday -> Tuning (QUIZ?)
+Last hw -> Thursday after last class
+
+- transactions make sure you dont lose data
+TM - transaction manager
+	- little police guy sitting watching over transactions
+
+transaction atomicity -> either complete (and record) or do nothing
+	- this is super important for reliability
+	- either commits or rollback
+
+databases keep logs
+	- record of all changes to the database
+	- you can only append to a log, with a number that is sequential
+	- this number is the log sequence number
+
+for each log entry you record
+	- transaction id (this is also stored in memory)
+	- the page you updated, and which bytes
+	- the old values and the new values
+	- if you commited these changes
+	- previous log entry that happened
+
+dirty page table (DPT)
+	- this stores what is in memory
+	- stores page id and log id
+
+DISK - our durable medium
+	- anytime log is full, we write it to disk (called flushing)
+	- from time to time, we also write our dirty pages back to disk
+		- when do we do this? two different approaches
+		- steal vs. no steal
+			- NO STEAL -> do not write a dirty page to disk until a transaction commits
+			- STEAL -> another transaction might use the current dirty pages, so we sometimes write them to disk then
+			- no steal means that we dont need to read from disk to abort
+
+	- to make sure we dont have a big problem if memory deletes, we need write ahead logging
+
+write ahead logging (WAL)
+	- log is always ahead of data
+	- if we need to write a page to disk, flush log, then write the data page to disk
+	- this is important because if we steal and write a page to disk, we know what it used to be
+	- steal and no steal have WAL
+	- force and no force have WAL
+
+commiting
+	- if we want to commit, we need to make sure not only did it work, but we LOGGED it
+
+before commit
+	- flush log to disk
+	- allow the transaction to commit
+EVEN MORE before commit (maybe more safe)
+	- flush log to disk
+	- write all dirty pages from this transaction to disk
+	- allow the transaction to commit
+Top is called NO FORCE
+Bottom is called FORCE
+
+let's say there is a crash
+	- everything in memory is lost
+	- we need to bring database to previous state that was considered valid
+		- start by analyzing what happened
+		- bring database to point right before crash
+		- record all changes by completed transaction REDO
+		- rollback from there to last valid location (before transaction) UNDO
+
+four possiblities for recovery (CHECK THIS FROM NOTES)
+	- no force/steal -> redo, no undo
+	- force/no steal -> no redo, undo
+	- force/steal -> no redo, no undo
+	- no force/no steal -> redo, undo
+
+	- no force/no steal is cleaner for recovery, but slower because it doesn't allow concurrency
+	- force/steal is fast and concurrent, but recovery is complicated
+
+checkpointing
+	- writing log entries for current state of transaction table and dirty page table
+	- flush this to disk
+	- this is basically "closing the books", making sure you have a point that matches in case of "disagreements"
+
+from here
+	- you use this checkpoint as a starting location
+	- you get all pages that are important at that checkpoint, like transaction tables, potentially dirty pages, etc
+	- from here, you need to know if it STEAL/NO and FORCE/NO
+	- this will tell you more info about what you got at the checkpoint
+	- then, you follow a series of steps (using the log tables), and you can restore the database
+		- these steps are outlines more in adali's notes
+	- you just re-do all operations from disk log tables
