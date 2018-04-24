@@ -1,0 +1,126 @@
+Concurrency Control
+- if two things try to operate on database at once, it still works.
+- what controls the order?
+
+- coordinate actions of processes that operate in parallel and 
+	possibly interfere.
+- if we do a mutex, we still need to handle if the person with the key crashes
+
+abstraction: transaction
+	- informally -> a transaction is an execution of a program that accesses a shared database
+		- ex: transfer 100 dollars from account x to account y
+
+We need databases to have:
+ACID properties
+A: atomicity -> either all happens or none of it happens. "all of nothing"
+C: consistency -> does the intended and correct purpose
+I: isolation -> a single transaction is the only one on the database. each operates as if alone
+D: durability -> once a transaction completes, all of its updates are recorded and never lost
+
+big focus of today is isolation -> this is part of concurrency
+
+abstraction 
+- a database is a set of named data items
+- a database system supports commands (we will call them operations) to access the database
+- 2 operations: 
+	- read(x) (r(x)) -> returns the value of x that is stored in the database
+	- write(x,val) (w(x,val)) -> change the value of x to val
+
+	- we can also write w(x) -> means we wrote something to x, if val is not important
+
+- commit (c) -> tell database to end transaction and make everything permanent
+- abort (a) -> tell databse to end trasnaction and revert all changes
+- all: r(x), w(x,val), c, a
+
+assume that each individual operations executes atomically
+	- operations happen completely or not at all
+	- operations happen one at a time
+
+===========================================
+what does a transaction look like?
+	t_1: r_1(x), r_2(y), w_1(y), c_1
+	t_2: r_2(x), w_2(x), r_2(z), w_2(z), c_2
+
+when multiple transactions execute concurrently, their operations are interleaved:
+	r_1(x), r_2(x), r_1(y), w_2(y), c_1, c_2
+	- this is called a schedule ^^^, when you plan these together
+
+so we want a good schedule, we don't want errors.
+what kind of schedule should we allow?
+
+schedule that doesn't give error: no interleavings (just one after other)
+	- this is called a serial schedule
+	r_1(x), r_1(y), w_1(y), c_1, r_2(x), w_2(x), r_2(z), w_2(z), c_2
+
+===========================================================
+we want to allow transaction concurrency
+	- but we want the same result we'd get from serial scheduling
+	r_1(x), r_2(y), w_1(x), w_2(z), c_1, c_2
+
+so how to redine if two different schedule have the same result? are they equivalent?
+
+2 schedules are equivalent if they read the same values and write the values in the same order
+
+S_1: r1(x), r2(x), r2(y), w1(x), w2(y), c1, c2
+S_2: r2(x), r2(y), w2(y), r1(x), w1(x), c1, c2
+S_3: r1(x), w1(x), r2(x), r2(y), w2(y), c2, c1
+
+S1 and S2 are equivalent
+S1 and S3 are not equivalent
+
+- this is a bit tedious, so we want to just look for conflicting operations
+
+2 operations conflict if they operate on the same data item and at least one of them is a write
+ex: r1(x), w2(x) CONFLICT
+ex: w1(y), w2(y) CONFLICT
+ex: r1(x), r2(x) NO CONFLICT
+
+2 schedules are conflict equivalent if they order all conflicting operations in the same way
+- we want to get schedules that are conflict equivalent to the serial schedule. we call this:
+SERIALIZABLE
+
+to check if a schedule is serializable, we draw a conflict graph
+
+S: r1(x), r2(x), w1(x), r3(x), w3(x), w2(y), c3, c2, w1(y), c1
+- draw the graphs (check notes online)
+- if (and only if) there are no cycles, the schedule is serializable
+- we can also use the graph to know what serial schedule this is equivalent to
+	- this one turns into: t2 -> t1 -> t3
+
+S: r1(x), r3(y), r1(z), w1(z), r2(z), r3(x), w1(x), r2(a), w3(y), w3(a), c1, c2, c3
+- this has a cycle, so it is not serializable. BAD.
+
+=======================================
+Concurrency Control Protocols
+in our database system: scheduler, database
+
+how to approach:
+	pessimistic -> assume schedule will conflict, so only let operations through if its serializable (check before)
+				-> can delay/abort transaction if its not serializable
+				-> used more in machine learning or long process settings
+	optimistic	-> let transactions happen, then check serializability upon committing
+				-> used more in cloud settings (usually, like on facebook, you dont collide with other users)
+
+==============================================
+pessimistic protocol:
+TWO PHASE LOCKING (2PL)
+	- scheduler will use locks to synchronize access to data items
+	- if lock obtained, you can execute operation
+		- but when do we release them?
+	- once you release the first lock for a transaction, you cant get any other locks
+	- two phases are: 
+		1. lock aquisitions phase (growing phase)
+		2. lock release phase (shrinking phase)
+
+vanilla two phase:
+t1: r1(x), w1(y), r1(z), c1
+t2: r2(a), r2(x), c2
+
+scheduler: (check notes for convenient graph thru time)
+- seems like if you're blocked, you need to wait out all of t1
+
+- kinds of two phase:
+	- one with a total lock
+	- one with a read lock and a write lock
+
+notes also include proof that 2PL always produces a serializable schedule.
